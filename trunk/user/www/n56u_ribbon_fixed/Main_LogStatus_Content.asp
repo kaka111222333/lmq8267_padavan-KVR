@@ -34,17 +34,14 @@ function initial(){
 function showclock(){
 	JS_timeObj.setTime(systime_millsec);
 	systime_millsec += 1000;
-	let year = JS_timeObj.getFullYear();
-	let month = checkTime(JS_timeObj.getMonth() + 1);
-	let date = checkTime(JS_timeObj.getDate());
-	let hours = checkTime(JS_timeObj.getHours());
-	let minutes = checkTime(JS_timeObj.getMinutes());
-	let seconds = checkTime(JS_timeObj.getSeconds());
-	const days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-	let day = days[JS_timeObj.getDay()];
-	let timezoneInfo = `GMT${timezone}`;
-	JS_timeObj2 = `${year}年 ${month}月 ${date}日 ${day}  ${hours}:${minutes}:${seconds}  ${timezoneInfo}`;
-
+	JS_timeObj2 = JS_timeObj.toString();
+	JS_timeObj2 = JS_timeObj2.substring(0,3) + ", " +
+	              JS_timeObj2.substring(4,10) + "  " +
+				  checkTime(JS_timeObj.getHours()) + ":" +
+				  checkTime(JS_timeObj.getMinutes()) + ":" +
+				  checkTime(JS_timeObj.getSeconds()) + "  " +
+				  JS_timeObj.getFullYear() + " GMT" +
+				  timezone;
 	$("system_time").innerHTML = JS_timeObj2;
 	setTimeout("showclock()", 1000);
 }
@@ -114,20 +111,24 @@ function clearLog(){
 
                                     <table width="100%" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <td style="border-top: 0 none; padding-bottom: 0px;">
+                                            <td colspan="3" style="border-top: 0 none; padding-bottom: 0px;">
                                                 <b><#General_x_SystemTime_itemname#>:</b><span class="alert alert-info" style="margin-left: 10px; padding-top: 4px; padding-bottom: 4px;" id="system_time"></span>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="border-top: 0 none; padding-bottom: 0px;">
-                                                <textarea rows="21" class="span12" style="height:377px; font-family:'Courier New', Courier, mono;" readonly="readonly" wrap="off" id="textarea"><% nvram_dump("syslog.log",""); %></textarea>
+                                            <td colspan="3" style="border-top: 0 none; padding-bottom: 0px;">
+                                                <textarea rows="21" class="span12" style="height:377px; font-family:'Courier New', Courier, mono; font-size:13px;" readonly="readonly" wrap="off" id="textarea"><% nvram_dump("syslog.log",""); %></textarea>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: left; padding-bottom: 0px;">
-                                                <input type="submit" onClick="clearLog();" value="<#CTL_clear#>" class="btn btn-info btn-clearlog">
-                                                <input type="button" onClick="location.href='syslog.txt'" value="<#CTL_onlysave#>" class="btn btn-success btn-savelog">
-                                                <input type="button" onClick="location.href=location.href" value="<#CTL_refresh#>" class="btn btn-primary btn-refreshlog">
+                                            <td width="15%" style="text-align: left; padding-bottom: 0px;">
+                                                <input type="submit" onClick="clearLog();" value="<#CTL_clear#>" class="btn btn-info" style="width: 170px">
+                                            </td>
+                                            <td width="15%" style="text-align: left; padding-bottom: 0px;">
+                                                <input type="button" onClick="location.href='syslog.txt'" value="<#CTL_onlysave#>" class="btn btn-success" style="width: 170px">
+                                            </td>
+                                            <td style="text-align: right; padding-bottom: 0px;">
+                                                <input type="button" onClick="location.href=location.href" value="<#CTL_refresh#>" class="btn btn-primary" style="width: 219px">
                                             </td>
                                         </tr>
                                     </table>
