@@ -1,11 +1,11 @@
 THISDIR = $(shell pwd)
 
 SRC_SS_NAME=shadowsocks-libev-3.3.5
-#https://github.com/shadowsocks/shadowsocks-libev.git
+
 
 SRC_SSR_NAME=shadowsocksr-libev-master
 ARCHIVE_SSR_NAME=shadowsocksr-libev-master-e2373d7
-#https://github.com/shadowsocksr-backup/shadowsocksr-libev.git
+
 
 
 all: extract_test config_test
