@@ -176,7 +176,7 @@ function done_validating(action){
                                         <tr>
                                             <th width="50%"><#IPConnection_ExposedIP_itemname#></th>
                                             <td>
-                                                <div id="ClientList_Block" class="alert alert-info ddown-list" style="width: 400px; background-color: #c9c4cb;"></div>
+                                                <div id="ClientList_Block" class="alert alert-info ddown-list"></div>
                                                 <div class="input-append">
                                                     <input type="text" maxlength="15" class="input" size="15" name="dmz_ip" value="<% nvram_get_x("","dmz_ip"); %>" onkeypress="return is_ipaddr(this,event);" style="float:left; width: 175px"/>
                                                     <button class="btn btn-chevron" id="chevron" type="button" onclick="pullLANIPList(this);" title="Select the IP of LAN clients."><i class="icon icon-chevron-down"></i></button>
@@ -187,7 +187,7 @@ function done_validating(action){
 
                                     <table width="100%" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#IPConnection_BattleNet_sectionname#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#IPConnection_BattleNet_sectionname#></th>
                                         </tr>
                                         <tr>
                                             <td colspan="2"><div class="alert alert-info" style="margin: 2px;"><#IPConnection_BattleNet_sectiondesc#></div></td>

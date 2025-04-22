@@ -462,7 +462,7 @@ function changeBgColor(obj, num){
 
                                     <table width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#LANHostConfig_x_LDNSServer1_sectionname#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#LANHostConfig_x_LDNSServer1_sectionname#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%"><a class="help_tooltip" href="javascript:void(0);" onmouseover="openTooltip(this,5,7);"><#LANHostConfig_x_LDNSServer1_itemname#> 1:</a></th>
@@ -498,7 +498,7 @@ function changeBgColor(obj, num){
 
                                     <table width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#t2Advanced#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#t2Advanced#></th>
                                         </tr>
 										<tr>
                                             <th width="50%"><a class="help_tooltip" href="javascript:void(0);" onmouseover="openTooltip(this,5,13);">禁止解析IPv6 DNS记录</a></th>
@@ -560,7 +560,7 @@ function changeBgColor(obj, num){
 
                                     <table width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="4" id="GWStatic" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#LANHostConfig_ManualDHCPList_groupitemdesc#></th>
+                                            <th colspan="4" id="GWStatic" style="background-color: #E3E3E3;"><#LANHostConfig_ManualDHCPList_groupitemdesc#></th>
                                         </tr>
                                         <tr>
                                             <th colspan="2" width="50%"><a class="help_tooltip" href="javascript:void(0);" onmouseover="openTooltip(this,5,11);"><#LANHostConfig_ManualDHCPEnable_itemname#></a></th>
@@ -608,7 +608,7 @@ function changeBgColor(obj, num){
                                         </tr>
                                         <tr id="row_static_header" style="display:none">
                                             <td width="25%">
-                                                <div id="ClientList_Block" class="alert alert-info ddown-list" style="width: 400px; background-color: #c9c4cb;"></div>
+                                                <div id="ClientList_Block" class="alert alert-info ddown-list" style="width: 400px;"></div>
                                                 <div class="input-append">
                                                     <input type="text" maxlength="12" class="span12" size="12" name="dhcp_staticmac_x_0" value="<% nvram_get_x("", "dhcp_staticmac_x_0"); %>" onkeypress="return is_hwaddr(event);" style="float:left; width: 110px"/>
                                                     <button class="btn btn-chevron" id="chevron" type="button" onclick="pullLANIPList(this);" title="Select the MAC of LAN clients."><i class="icon icon-chevron-down"></i></button>

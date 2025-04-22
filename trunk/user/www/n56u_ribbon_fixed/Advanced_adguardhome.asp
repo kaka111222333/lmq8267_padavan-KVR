@@ -43,11 +43,6 @@ function initial(){
 
 }
 
-function textarea_scripts_enabled(v){
-	inputCtrl(document.form['scripts.adg.sh'], v);
-}
-
-
 function applyRule(){
 //	if(validForm()){
 		showLoading();
@@ -138,9 +133,7 @@ function done_validating(action){
 									<div class="alert alert-info" style="margin: 10px;">
 									<p>AdGuard Home 是一款全网广告拦截与反跟踪软件。在您将其安装完毕后，它将保护您所有家用设备，同时您不再需要安装任何客户端软件。随着物联网与连接设备的兴起，掌控您自己的整个网络环境变得越来越重要。
 									</p>
-									<a href="https://adguard.com/zh_cn/adguard-home/overview.html" target="blank">AdGuard 主页</a>
-									,项目地址：<a href="https://github.com/AdguardTeam/AdGuardHome" target="blank">https://github.com/AdguardTeam/AdGuardHome</a>
-									,备注：①安装需要 30M+ 的空间 ②默认帐号密码：admin  ③ 修改密码下方adg.sh的第四五行auth_name:账号 auth_pass:填写转换后的密码 ④ <a href="https://www.jisuan.mobi/nX7.html" target="blank">在线密码生成计算器</a>
+									AdGuard Home  主页<a href="https://adguard.com/" target="blank"><i><u>https://adguard.com/</u></i></a>
 									</div>
 
 									<table width="100%" align="center" cellpadding="4" cellspacing="0" class="table">
@@ -176,14 +169,7 @@ function done_validating(action){
 											</td>
 										</tr>
 										
-<tr id="row_post_wan_script">
-											<td colspan="2">
-												<i class="icon-hand-right"></i> <a href="javascript:spoiler_toggle('script2')"><span>adg配置参数-不懂请不要乱改！！！</span></a>
-												<div id="script2">
-													<textarea rows="18" wrap="off" spellcheck="false" maxlength="314571" class="span12" name="scripts.adg.sh" style="font-family:'Courier New'; font-size:12px;"><% nvram_dump("scripts.adg.sh",""); %></textarea>
-												</div>
-											</td>
-										</tr>
+
 										<tr>
 											<td colspan="2" style="border-top: 0 none;">
 												<br />
@@ -206,3 +192,4 @@ function done_validating(action){
 </div>
 </body>
 </html>
+

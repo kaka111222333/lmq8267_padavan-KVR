@@ -540,7 +540,7 @@ function valid_IP_subnet(obj){
 
                                     <table width="100%" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#VSAuto#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#VSAuto#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%"><#UPnP_Enable#></th>
@@ -609,7 +609,7 @@ function valid_IP_subnet(obj){
                                     </table>
                                     <table width="100%" cellpadding="4" cellspacing="0" class="table">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#VSManual#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#VSManual#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%"><#IPConnection_VServerEnable_itemname#>
@@ -644,7 +644,7 @@ function valid_IP_subnet(obj){
 
                                     <table width="100%" cellpadding="4" cellspacing="0" class="table table-list" id="VSList_Block">
                                         <tr>
-                                            <th colspan="7" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#IPConnection_VSList_title#></th>
+                                            <th colspan="7" style="background-color: #E3E3E3;"><#IPConnection_VSList_title#></th>
                                         </tr>
                                         <tr>
                                             <td><#IPConnection_VServerDescript_itemname#></td>
@@ -667,7 +667,7 @@ function valid_IP_subnet(obj){
                                                 <input style="display:none" type="text" class="span12" maxlength="3" size="3" name="vts_protono_x_0" value="<% nvram_get_x("", "vts_protono_x_0"); %>" onkeypress="return is_number(this,event);" />
                                             </td>
                                             <td>
-                                                <div id="ClientList_Block" class="alert alert-info ddown-list" style="width: 400px; background-color: #c9c4cb;"></div>
+                                                <div id="ClientList_Block" class="alert alert-info ddown-list"></div>
                                                 <div class="input-append">
                                                     <input type="text" size="12" maxlength="15" name="vts_ipaddr_x_0" value="<% nvram_get_x("", "vts_ipaddr_x_0"); %>" onkeypress="return is_ipaddr(this,event);" style="float:left; width: 94px"/>
                                                     <button class="btn btn-chevron" id="chevron" type="button" onclick="pullLANIPList(this);" title="Select the IP of LAN clients."><i class="icon icon-chevron-down"></i></button>

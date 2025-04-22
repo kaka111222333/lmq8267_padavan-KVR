@@ -256,7 +256,6 @@ function change_smb_enabled(){
 	showhide_div('row_smb_mode', v);
 	showhide_div('row_smb_lmb', v);
 	showhide_div('row_smb_fp', v);
-	showhide_div('row_smb_options', v);
 }
 
 function on_change_ftp_mode(enable){
@@ -472,7 +471,7 @@ function done_validating(action){
 
                                     <table id="tbl_smbd" width="100%" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageSMBD#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#StorageSMBD#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -504,7 +503,7 @@ function done_validating(action){
                                                 <#StorageShare#>
                                             </th>
                                             <td>
-                                                <select name="st_samba_mode" class="input" style="width: 220px;">
+                                                <select name="st_samba_mode" class="input" style="width: 300px;">
                                                     <option value="1" <% nvram_match_x("", "st_samba_mode", "1", "selected"); %>><#StorageShare1#></option>
                                                     <option value="3" <% nvram_match_x("", "st_samba_mode", "3", "selected"); %>><#StorageShare5#></option>
                                                     <option value="4" <% nvram_match_x("", "st_samba_mode", "4", "selected"); %>><#StorageShare2#></option>
@@ -534,18 +533,11 @@ function done_validating(action){
                                                 </select>
                                             </td>
                                         </tr>
-		<tr id="row_smb_options">
-                      <th>samba 启动选项(options):
-                      </th>
-                      <td>
-                      <input type="text" maxlength="255" size="32" name="st_samba_options" class="input" placeholder="-D -s /etc/smb.conf" value="<% nvram_get_x("", "st_samba_options"); %>" onKeyPress="return is_string(this,event);"/>
-                      </td>
-                   </tr>
                                     </table>
 
                                     <table id="tbl_ftpd" width="100%" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageFTPD#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#StorageFTPD#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -569,7 +561,7 @@ function done_validating(action){
                                                 <#StorageShare#>
                                             </th>
                                             <td>
-                                                <select name="st_ftp_mode" class="input" style="width: 220px;" onchange="on_change_ftp_mode(1);">
+                                                <select name="st_ftp_mode" class="input" style="width: 300px;" onchange="on_change_ftp_mode(1);">
                                                     <option value="1" <% nvram_match_x("", "st_ftp_mode", "1", "selected"); %>><#StorageShare1#></option>
                                                     <option value="3" <% nvram_match_x("", "st_ftp_mode", "3", "selected"); %>><#StorageShare3#></option>
                                                     <option value="2" <% nvram_match_x("", "st_ftp_mode", "2", "selected"); %>><#StorageShare2#></option>
@@ -607,7 +599,7 @@ function done_validating(action){
 
                                     <table width="100%" id="tbl_nfsd" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="2" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageNFSD#></th>
+                                            <th colspan="2" style="background-color: #E3E3E3;"><#StorageNFSD#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -630,7 +622,7 @@ function done_validating(action){
 
                                     <table width="100%" id="tbl_minidlna" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="3" style="background-color: #rgba ( 171 , 168 , 167 , 0.2 );"><#UPnPMediaServer#></th>
+                                            <th colspan="3" style="background-color: #E3E3E3;"><#UPnPMediaServer#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -740,7 +732,7 @@ function done_validating(action){
 
                                     <table width="100%" id="tbl_itunes" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="3" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageFFly#></th>
+                                            <th colspan="3" style="background-color: #E3E3E3;"><#StorageFFly#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -767,7 +759,7 @@ function done_validating(action){
 
                                     <table width="100%" id="tbl_trmd" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="3" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageTorrent#></th>
+                                            <th colspan="3" style="background-color: #E3E3E3;"><#StorageTorrent#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
@@ -809,7 +801,7 @@ function done_validating(action){
 
                                     <table width="100%" id="tbl_aria" cellpadding="4" cellspacing="0" class="table" style="display:none;">
                                         <tr>
-                                            <th colspan="3" style="background-color: rgba ( 171 , 168 , 167 , 0.2 );"><#StorageAria#></th>
+                                            <th colspan="3" style="background-color: #E3E3E3;"><#StorageAria#></th>
                                         </tr>
                                         <tr>
                                             <th width="50%">
