@@ -18,7 +18,7 @@
 <script>
 var $j = jQuery.noConflict();
 
-var ipmonitor = [<% get_static_client_ipv6(); %>];
+var ipmonitor = [<% get_static_client(); %>];
 var wireless = {<% wl_auth_list(); %>};
 
 var list_type = '<% nvram_get_x("", "macfilter_enable_x"); %>';
@@ -27,7 +27,7 @@ var m_dhcp = [<% get_nvram_list("LANHostConfig", "ManualDHCPList"); %>];
 
 var nmap_fullscan = '<% nvram_get_x("", "networkmap_fullscan"); %>';
 
-var DEVICE_TYPE = ["", "<#Device_type_01_PC#>", "<#Device_type_02_RT#>", "<#Device_type_03_AP#>", "<#Device_type_04_NS#>", "<#Device_type_05_IC#>", "<#Device_type_06_OD#>", "<#Device_type_07_PR#>", "<#Device_type_08_XB#>"];
+var DEVICE_TYPE = ["", "<#Device_type_01_PC#>", "<#Device_type_02_RT#>", "<#Device_type_03_AP#>", "<#Device_type_04_NAS#>", "<#Device_type_05_IC#>", "<#Device_type_06_OD#>"];
 
 var clients = getclients(1,0);
 var unblocked_clients = new Array();
@@ -117,15 +117,11 @@ function check_full_scan_done(){
 		$("LoadingBar").style.display = "none";
 		$("refresh_list").disabled = false;
 		if (sw_mode == "3") {
-			$j(document).ready(function() {
-				$j('.popover_top').popover({placement: 'top'});
-				$j('.popover_bottom').popover({placement: 'bottom'});
-			});
+			$j('.popover_top').popover({placement: 'top'});
+			$j('.popover_bottom').popover({placement: 'bottom'});
 		}else {
-			$j(document).ready(function() {
-				$j('.popover_top').popover({placement: 'right'});
-				$j('.popover_bottom').popover({placement: 'right'});
-			});
+			$j('.popover_top').popover({placement: 'right'});
+			$j('.popover_bottom').popover({placement: 'right'});
 		}
 	}else{
 		$("LoadingBar").style.display = "block";
@@ -178,7 +174,6 @@ function add_client_row(table, atIndex, client, blocked, j){
 
 	typeCell.style.textAlign = "center";
 	typeCell.innerHTML = "<img title='"+ DEVICE_TYPE[client[5]]+"' src='/bootstrap/img/wl_device/" + client[5] +".gif'>";
-	nameCell.style.wordBreak = "break-all";
 	nameCell.innerHTML = (client[6] == "1") ? "<a href=http://" + client[0] + " target='blank'>" + client[0] + "</a>" : client[0];
 	ipCell.innerHTML = (client[6] == "1") ? "<a href=http://" + client[1] + " target='blank'>" + client[1] + "</a>" : client[1];
 	macCell.innerHTML = "<a target='_blank' href='https://services13.ieee.org/RST/standards-ra-web/rest/assignments/?registry=MAC&text=" + client[2].substr(0,6) + "'>" + mac_add_delimiters(client[2]) + "</a>";
@@ -206,22 +201,6 @@ function show_clients(){
 	
 	var hasBlocked = false;
 	for(j=0, i=0, k=0; j < clients.length; j++){
-		for(j2=0; j2 < m_dhcp.length && clients[j][0] == "*"; j2++){
-			if (clients[j][2].toUpperCase() == m_dhcp[j2][0].toUpperCase()){
-				if (m_dhcp[j2][2] != "" && m_dhcp[j2][2] != null && m_dhcp[j2][2].length > 0){
-					clients[j][0] = m_dhcp[j2][2];
-					break;
-				}
-			}
-		}
-		for(j3=0; j3 < clients.length && clients[j][0] == "*"; j3++){
-			if (clients[j][2].toUpperCase() == clients[j3][2].toUpperCase()){
-				if (clients[j3][0] != "*" && clients[j3][0] != null && clients[j3][0].length > 0){
-					clients[j][0] = clients[j3][0];
-					break;
-				}
-			}
-		}
 		if(clients[j][7] == "u" || sw_mode == "3"){
 			add_client_row(table1, k+2, clients[j], false, j);
 			k++;
@@ -371,7 +350,7 @@ function networkmap_update(s){
 </script>
 
 <style>
-    .table th, .table td{vertical-align: middle; text-align: center;padding-left:0px;padding-right:0px;padding-top:8px;padding-bottom:8px;word-wrap:break-word;}
+    .table th, .table td{vertical-align: middle; text-align: center;}
 </style>
 
 </head>
@@ -397,7 +376,7 @@ function networkmap_update(s){
 <input type="hidden" name="macfilter_list_x_0" value="">
 <input type="hidden" name="macfilter_time_x_0" value="00002359">
 <input type="hidden" name="macfilter_date_x_0" value="1111111">
-<select name="MFList_s" id="MFList_s" multiple="true" style="visibility:hidden; width:0px; height:0px;word-wrap:break-word;"></select>
+<select name="MFList_s" id="MFList_s" multiple="true" style="visibility:hidden; width:0px; height:0px;"></select>
 </form>
 
 <div id="unBlockedClients_table"></div>
@@ -409,11 +388,11 @@ function networkmap_update(s){
         </tr>
         <tr>
             <th width="8%"><a href="javascript:sort(0)"><#Type#></a></th>
-            <th width="25%"><a href="javascript:sort(1)"><#Computer_Name#></a></th>
-            <th><a href="javascript:sort(2)">IPv4/IPV6</a></th>
-            <th width="22%"><a href="javascript:sort(3)">MAC</a></th>
-            <th width="8%" id="col_rssi"><a href="javascript:sort(4)">信号值</a></th>
-            <th width="8%" id="col_block"></th>
+            <th><a href="javascript:sort(1)"><#Computer_Name#></a></th>
+            <th width="20%"><a href="javascript:sort(2)">IP</a></th>
+            <th width="24%"><a href="javascript:sort(3)">MAC</a></th>
+            <th width="8%" id="col_rssi"><a href="javascript:sort(4)">RSSI</a></th>
+            <th width="0%" id="col_block"></th>
         </tr>
     </thead>
     <tbody>
@@ -428,11 +407,11 @@ function networkmap_update(s){
         </tr>
         <tr>
             <th width="8%"><#Type#></th>
-            <th width="25%"><#Computer_Name#></th>
-            <th>IPv4/IPV6</th>
-            <th width="22%">MAC</th>
-            <th width="8%" id="col_unrssi">信号值</th>
-            <th width="8%" id="col_unblock"></th>
+            <th><#Computer_Name#></th>
+            <th width="20%">IP</th>
+            <th width="24%">MAC</th>
+            <th width="8%" id="col_unrssi">RSSI</th>
+            <th width="0%" id="col_unblock"></th>
         </tr>
     </thead>
     <tbody>
@@ -491,4 +470,3 @@ function networkmap_update(s){
 </script>
 </body>
 </html>
-
