@@ -83,47 +83,46 @@ typedef u_int8_t u8;
 
 //如果你要修改的话 请注意后面的序号，每个插件对应的序号不能相同  不能超过63 你可以删掉不需要的 把序号给你需要的插件
 //#define EVM_RESTART_NFSD			(1ULL << 38) //nfsd文件系统
-#define EVM_RESTART_EASYTIER			(1ULL << 38) // Easyier异地组网
+//#define EVM_RESTART_EASYTIER			(1ULL << 38) // Easyier异地组网【删除1】
 #define EVM_RESTART_DMS				(1ULL << 39) //Minidlna UPnP 媒体服务器
-#define EVM_RESTART_ITUNES			(1ULL << 40) //Firefly iTunes 媒体服务器
+#define EVM_RESTART_ITUNES			(1ULL << 40)
 //#define EVM_RESTART_TRMD			(1ULL << 41) //#TRANSMISSION
-#define EVM_RESTART_CLOUDFLARE			(1ULL << 41)  //CF的ddns
-#define EVM_RESTART_ARIA			(1ULL << 42) //aria2c文件下载
+//#define EVM_RESTART_CLOUDFLARE		(1ULL << 41)  //CF的ddns【删除2】
+//#define EVM_RESTART_ARIA			(1ULL << 42) //aria2c文件下载【删除3】
 //#define EVM_RESTART_SCUT			(1ULL << 43) //校园网
 #define EVM_RESTART_TTYD			(1ULL << 43) //ttyd网页终端
 //#define EVM_RESTART_VLMCSD			(1ULL << 44) //微软服务
-#define EVM_RESTART_ALIST			(1ULL << 44) //alist文件列表
-#define EVM_RESTART_ALIDDNS			(1ULL << 45) //阿里ddns
-#define EVM_RESTART_SMARTDNS	    		(1ULL << 46) //smartdns加速
-#define EVM_RESTART_FRP	    			(1ULL << 47) //frp内网穿透
+//#define EVM_RESTART_ALIST			(1ULL << 44) //alist文件列表【删除4】
+//#define EVM_RESTART_ALIDDNS			(1ULL << 45) //阿里ddns【删除5】
+//#define EVM_RESTART_SMARTDNS	    		(1ULL << 46) //smartdns加速【删除6】
+//#define EVM_RESTART_FRP	    		(1ULL << 47) //frp内网穿透【删除7】
 //#define EVM_RESTART_DNSFORWARDER		(1ULL << 47) //dns转发
-//#define EVM_RESTART_SHADOWSOCKS		(1ULL << 48) //科学上网ss
-#define EVM_RESTART_CADDY			(1ULL << 48) //caddy文件管理
+#define EVM_RESTART_SHADOWSOCKS		(1ULL << 48) //科学上网ss【新增】
+//#define EVM_RESTART_CADDY			(1ULL << 48) //caddy文件管理【删除8】
 //#define EVM_RESTART_SS_TUNNEL			(1ULL << 49) //科学上网插件
-#define EVM_RESTART_ADGUARDHOME			(1ULL << 49) //adg去广告
+//#define EVM_RESTART_ADGUARDHOME		(1ULL << 49) //adg去广告【删除9】
 //#define EVM_RESTART_MENTOHUST			(1ULL << 50) //校园认证
 //#define EVM_RESTART_WYY			(1ULL << 50) //网易云
-#define EVM_RESTART_BAFA			(1ULL << 50) //巴法云
+//#define EVM_RESTART_BAFA			(1ULL << 50) //巴法云【删除10】
 //#define EVM_RESTART_ADBYBY			(1ULL << 51) //adb去广告
 #define EVM_RESTART_ZEROTIER			(1ULL << 51) //zeriter异地组网
-//#define EVM_RESTART_DDNSTO	    		(1ULL << 52) //ddnsto内网穿透
-#define EVM_RESTART_WIREGUARD			(1ULL << 52) //wg异地组网
-#define EVM_RESTART_ALDRIVER			(1ULL << 53) //阿里云盘挂载
+#define EVM_RESTART_DDNSTO	    		(1ULL << 52) //ddnsto内网穿透【新增1】
+//#define EVM_RESTART_WIREGUARD			(1ULL << 52) //wg异地组网【删除11】
+//#define EVM_RESTART_ALDRIVER			(1ULL << 53) //阿里云盘挂载【删除12】
 //#define EVM_RESTART_VIRTUALHERE		(1ULL << 53) //virtualhere
-#define EVM_RESTART_UUPLUGIN			(1ULL << 54) //UU加速器
+//#define EVM_RESTART_UUPLUGIN			(1ULL << 54) //UU加速器【删除13】
 //#define EVM_RESTART_KOOLPROXY			(1ULL << 55) //kp去广告
-#define EVM_RESTART_LUCKY			(1ULL << 55) //lucky
-#define EVM_RESTART_WXSEND			(1ULL << 56) //微信推送
-#define EVM_RESTART_CLOUDFLARED			(1ULL << 57) //CF隧道免费内网穿透
+//#define EVM_RESTART_LUCKY			(1ULL << 55) //lucky【删除14】
+//#define EVM_RESTART_WXSEND			(1ULL << 56) //微信推送【删除15】
+//#define EVM_RESTART_CLOUDFLARED		(1ULL << 57) //CF隧道免费内网穿透【删除16】
 #define EVM_RESTART_VNTS			(1ULL << 58) //vnt服务器
 #define EVM_RESTART_VNTCLI			(1ULL << 59) //vnt客户端
 //#define EVM_RESTART_NVPPROXY			(1ULL << 60) 
-//#define EVM_RESTART_V2RAYA			(1ULL << 60) //V2RAYA
-#define EVM_RESTART_NATPIERCE			(1ULL << 60) //皎月连
-#define EVM_RESTART_TAILSCALE			(1ULL << 61) //taislacle
+//#define EVM_RESTART_NATPIERCE			(1ULL << 60) //皎月连【删除17】
+//#define EVM_RESTART_TAILSCALE			(1ULL << 61) //taislacle【删除18】
 #define EVM_RESTART_REBOOT			(1ULL << 62) //重启
 #define EVM_BLOCK_UNSAFE			(1ULL << 63) /* special case */
-
+//#define EVM_RESTART_v2ray			(1ULL << 44) //v2ray
 
 #define EVT_RESTART_FIREWALL		1
 #define EVT_RESTART_DHCPD			1
